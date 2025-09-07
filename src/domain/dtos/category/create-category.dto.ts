@@ -2,7 +2,7 @@ export class CreateCategoryDto {
 
   private constructor(
     public readonly name: string,
-    private readonly available: boolean,
+    public readonly available: boolean,
   ) {}
 
   static create(object: { [key: string]: any } = {}): [undefined, CreateCategoryDto] | [string, undefined] {

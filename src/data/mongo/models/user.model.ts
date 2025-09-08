@@ -35,4 +35,10 @@ const userSchema = new mongoose.Schema({
 
 });
 
+userSchema.set('toJSON', {
+  virtuals: true,
+  versionKey: false,
+  transform: (doc, { _id, password, ...ret }, options) => ({ ...ret }),
+});
+
 export const UserModel = mongoose.model('User', userSchema);

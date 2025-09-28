@@ -30,6 +30,7 @@ export class Server {
     this.app.use(express.urlencoded({ extended: true })); // x-www-form-urlencoded
     this.app.use(fileUpload({
       limits: { fileSize: 50 * 1024 * 1024 },
+      parseNested: true,
     }));
 
     //* Public Folder
